@@ -19,7 +19,7 @@ def remove_strawberry(contacts)
     person = contacts[fullName]
     allData.each do |key, data|
       if key == :favorite_ice_cream_flavors
-        person[key] = data.select {|x| x != "strawberry"}
+        data.delete_if {|x| x == "strawberry"}
       end
     end
   end
